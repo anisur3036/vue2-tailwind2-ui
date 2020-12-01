@@ -1,5 +1,16 @@
+/*eslint quotes: ["warn", "single"]*/
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
-  </div>
+  <app-layout>
+    Anisur
+  </app-layout>
 </template>
+
+<script>
+import AppLayout from '@/layouts/Default';
+export default {
+  metaInfo: { title: 'About' },
+  components: {
+    AppLayout
+  }
+};
+</script>

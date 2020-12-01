@@ -11,9 +11,11 @@
   "dependencies": {
     "autoprefixer": "^9.8.6",
     "core-js": "^3.6.5",
+    "portal-vue": "^2.1.7",
     "postcss": "^7.0.35",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.1",
     "vue": "^2.6.11",
+    "vue-meta": "^2.4.0",
     "vue-router": "^3.2.0",
     "vuex": "^3.4.0"
   },
@@ -33,5 +35,55 @@
     "prettier": "^1.19.1",
     "sass-loader": "^8.0.2",
     "vue-template-compiler": "^2.6.11"
+  },
+  "prettier": {
+    "singleQuote": true
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "es6": true,
+      "jest": true,
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "globals": {
+      "Atomics": "readonly",
+      "SharedArrayBuffer": "readonly",
+      "_": false
+    },
+    "parserOptions": {
+      "parser": "babel-eslint",
+      "ecmaVersion": 7
+    },
+    "rules": {
+      "eol-last": [
+        "error",
+        "always"
+      ],
+      "no-unused-vars": [
+        "warm",
+        "off"
+      ],
+      "indent": [
+        "error",
+        2
+      ],
+      "linebreak-style": [
+        "error",
+        "unix"
+      ],
+      "quotes": [
+        "error",
+        "single"
+      ],
+      "semi": [
+        "error",
+        "always"
+      ]
+    }
   }
 }

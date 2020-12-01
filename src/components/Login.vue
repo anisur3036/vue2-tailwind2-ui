@@ -51,11 +51,10 @@
             Sign in
           </button>
           <span class="text-center mt-3 text-green-600"
-            >Already register?
+            >Do not have account?
             <router-link class="text-red-400 hover:underline" to="/register"
-              >Login</router-link
-            >
-            here.</span
+              >Register now</router-link
+            ></span
           >
         </div>
       </form>
@@ -75,9 +74,7 @@ export default {
     };
   },
   methods: {
-    login() {
-      console.log(this.form);
-    }
+    login() {}
   }
 };
 </script>
