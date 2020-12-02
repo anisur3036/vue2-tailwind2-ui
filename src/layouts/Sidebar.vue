@@ -4,13 +4,12 @@
     <div
       :class="isOpen ? 'block' : 'hidden'"
       @click="sideBarClosed"
-      class="fixed z-20 inset-0 bg-black opacity-50 transition-opacity lg:hidden"
+      class="fixed z-20 inset-0 bg-black cursor-pointer opacity-50 transition-opacity lg:hidden"
     ></div>
     <!-- End Backdrop -->
 
     <div
       :class="isOpen ? 'translate-x-0 ease-out' : '-translate-x-full ease-in'"
-      :anis="true"
       class="fixed z-30 inset-y-0 left-0 w-64 transition duration-300 transform bg-gray-900 overflow-y-auto lg:translate-x-0 lg:static lg:inset-0"
     >
       <div class="flex items-center justify-center mt-6">
@@ -171,6 +170,8 @@
 
           <span class="mx-4">Blank</span>
         </router-link>
+        <!-- <span class="mx-4 text-white">Sidebar Component: {{ name }} </span> -->
+        <!-- <button class="mx-4 bg-white text-gray-800 rounded border p-2" @click="resetName">Reset Name</button> -->
       </nav>
     </div>
   </div>
@@ -178,10 +179,9 @@
 
 <script>
 export default {
-  props: ['anis'],
   data() {
     return {
-      isOpen: true,
+      sidebar: false,
       activeClass: 'bg-gray-600 bg-opacity-25 text-gray-100 border-gray-100',
       inactiveClass:
         'border-gray-900 text-gray-500 hover:bg-gray-600 hover:bg-opacity-25 hover:text-gray-100'
@@ -189,7 +189,12 @@ export default {
   },
   methods: {
     sideBarClosed() {
-      this.isOpen = false;
+      this.$store.commit('sideBarClosed', false);
+    }
+  },
+  computed: {
+    isOpen() {
+      return this.$store.state.sidebarOpen;
     }
   }
 };

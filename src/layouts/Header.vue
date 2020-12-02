@@ -4,10 +4,10 @@
   >
     <div class="flex items-center">
       <button
-        @click="sidebarOpen"
         class="text-gray-500 focus:outline-none lg:hidden"
+        @click="sidebarOpen"
       >
-        <icon name="alt-menu" />
+        <icon name="alt-menu" class="w-6 h-6" />
       </button>
 
       <div class="relative mx-4 lg:mx-0">
@@ -60,7 +60,6 @@
             alt="Your avatar"
           />
         </button>
-
         <div
           v-show="dropdownOpen"
           @click="dropdownOpen = false"
@@ -93,25 +92,20 @@
 </template>
 
 <script>
+import { eventBas } from '@/main';
 import Icon from '@/shared/Icon';
 export default {
   components: {
     Icon
   },
-  props: {
-    anis: {
-      type: String
-    }
-  },
   data() {
     return {
-      isOpen: false,
       dropdownOpen: false
     };
   },
   methods: {
     sidebarOpen() {
-      this.anis = true;
+      this.$store.commit('sideBarOpen', true);
     }
   }
 };
