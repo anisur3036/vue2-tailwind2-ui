@@ -121,7 +121,7 @@ export default {
         const email = 'Email is Required';
         this.errors = { ...this.errors, email };
       } else if (
-        /^([a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]{2,})+@([a-zA-Z0-9-]{2,})+(?:\.([a-zA-Z0-9-]{2,6}))*$/.test(
+        /^([a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]{2,})+@([a-zA-Z0-9-]{2,})+\.([a-zA-Z0-9-]{2,6})$/.test(
           this.form.email
         ) === false
       ) {
